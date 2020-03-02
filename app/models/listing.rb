@@ -1,4 +1,4 @@
 class Listing < ApplicationRecord
   belongs_to :category
-  has_many_attached :picture
+  has_one_attached :picture
 end
