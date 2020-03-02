@@ -20,6 +20,8 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
+      <div class="card">
+  <%= image_tag listing.picture if listing.picture.attached? %>
         <td><%= listing.title %></td>
         <td><%= listing.description %></td>
         <td><%= listing.category.name %></td>
