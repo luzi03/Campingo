@@ -21,10 +21,10 @@
     <%= form.text_area :description %>
   </div>
 
-  <div>
-    <%= form.label :category_id %>
-    <%= form.select(:category_id, @categories.map {|b| [b.name, b.id]}) %>
-  </div>
+<div>
+  <%= form.label :category_id %>
+  <%= form.select( :category_id, @categories.map {|b| [b.name, b.id]}) %>
+</div>
 
   <div class="field">
     <%= form.label :suburb %>

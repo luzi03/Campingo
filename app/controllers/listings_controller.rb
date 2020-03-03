@@ -37,15 +37,6 @@ class ListingsController < ApplicationController
         format.json { render json: @listing.errors, status: :unprocessable_entity }
       end
     end
-
-    @listing = current_user.listings.create(listing_params)
-
-    if @listing.errors.any?
-        set_category
-        render "new"
-    else
-        redirect_to listings_path
-    end
   end
 
   # PATCH/PUT /listings/1
@@ -83,9 +74,8 @@ class ListingsController < ApplicationController
       params.require(:listing).permit(:title, :description, :category_id, :suburb, :city, :price, :deposit, :availability, :picture)
     end
 
-    def set_category
-      @categories = Category.all
-      
+  def set_category
+    @categories = Category.all 
   end
 
 end
