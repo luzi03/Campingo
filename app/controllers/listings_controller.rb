@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :set_listing, only: [:show]
+  before_action :set_user_listing, only: [:edit, :update, :destroy]
   before_action :set_category, only: [:new, :edit]
   before_action :authenticate_user!
 
@@ -26,7 +27,7 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
-    @listing = Listing.new(listing_params)
+    @listing = current_user.listings.create(listing_params)
 
     respond_to do |format|
       if @listing.save
@@ -68,6 +69,16 @@ class ListingsController < ApplicationController
     def set_listing
       @listing = Listing.find(params[:id])
     end
+    
+    # method to set user listing
+    def set_user_listing
+      id = params[:id]
+      @listing = current_user.listings.find_by_id(id)
+  
+      if @listing == nil
+          redirect_to listings_path
+      end
+  end
 
     # Only allow a list of trusted parameters through.
     def listing_params
