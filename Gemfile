@@ -71,3 +71,5 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 gem "aws-sdk-s3", "~> 1.60"
 
 gem "devise", "~> 4.7"
+
+gem "stripe", "~> 5.17"

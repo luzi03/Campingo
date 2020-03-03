@@ -16,12 +16,15 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  
+  
   <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-      <div class="card">
-  <%= image_tag listing.picture if listing.picture.attached? %>
+  <% @listings.each do |listing| %>
+  
+    <tr>
+
+
+        <%= image_tag listing.picture if listing.picture.attached? %>
         <td><%= listing.title %></td>
         <td><%= listing.description %></td>
         <td><%= listing.category.name %></td>
@@ -30,11 +33,14 @@
         <td><%= listing.price %></td>
         <td><%= listing.deposit %></td>
         <td><%= listing.availability %></td>
+
         <td><%= link_to 'Show', listing %></td>
         <td><%= link_to 'Edit', edit_listing_path(listing) if user_signed_in? and listing.user.id == current_user.id  %></td>
         <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? and listing.user.id == current_user.id  %></td>
       </tr>
-    <% end %>
+
+   <% end %>
+  
   </tbody>
 </table>
 
