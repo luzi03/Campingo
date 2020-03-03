@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :set_category, only: [:new, :edit]
+  #before_action :authenticate_user!
 
   # GET /listings
   # GET /listings.json
@@ -35,6 +36,15 @@ class ListingsController < ApplicationController
         format.html { render :new }
         format.json { render json: @listing.errors, status: :unprocessable_entity }
       end
+    end
+
+    @listing = current_user.listings.create(listing_params)
+
+    if @listing.errors.any?
+        set_category
+        render "new"
+    else
+        redirect_to listings_path
     end
   end
 
