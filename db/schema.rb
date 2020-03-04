@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_073937) do
     t.bigint "category_id"
     t.string "suburb"
     t.string "city"
-    t.float "price"
-    t.float "deposit"
+    t.integer "price"
+    t.integer "deposit"
     t.boolean "availability"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

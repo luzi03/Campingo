@@ -13,7 +13,6 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
-    if current_user #user_signed_in?
     session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
         customer_email: current_user.email,
@@ -35,7 +34,7 @@ class ListingsController < ApplicationController
     )
 
     @session_id = session.id
-  end
+
 end
 
 
