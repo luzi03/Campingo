@@ -8,6 +8,7 @@
 
 
 for i in 1..10
+    
     Category.create(
         name: Faker::Appliance.equipment     
     )

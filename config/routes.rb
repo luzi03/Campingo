@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  
   devise_for :users
   resources :listings
+
+  
+  get 'payments/success'
+
   get "/payments/success", to: "payments#success"
   
   post "/payments/webhook", to: "payments#webhook"
