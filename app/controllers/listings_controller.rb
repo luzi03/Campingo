@@ -7,7 +7,8 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+      @q = Listing.ransack(params[:q])
+      @listings = @q.result.includes(category: [])
   end
 
   # GET /listings/1
