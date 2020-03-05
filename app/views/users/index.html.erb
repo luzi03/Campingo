@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
-<h1>Users</h1>
+<h1>Camingo Users</h1>
 
 <tbody>
   <% @users.each do |user| %>
   
 
     
-<p><%= user.username %></p>
-<%=link_to user.username, user_path(user)%>
+<p><%= user.user_name %></p>
+<%=link_to user.user_name, user_path(user)%>
 
 <%end%>
 
