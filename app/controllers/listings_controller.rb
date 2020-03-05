@@ -13,6 +13,7 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
+    if current_user #user_signed_in?
     session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
         customer_email: current_user.email,
@@ -34,7 +35,7 @@ class ListingsController < ApplicationController
     )
 
     @session_id = session.id
-
+    end 
 end
 
 
@@ -90,16 +91,17 @@ end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
-      @listing = current_user.listings.find(params[:id])
+      @listing = Listing.find(params[:id])
+      #@listing = current_user.listings.find(params[:id])#
     end
     
     # method to set user listing
     def set_user_listing
       id = params[:id]
       @listing = current_user.listings.find_by_id(id)
-  
-      if @listing == nil
-          redirect_to listings_path
+      if
+       @listing == nil
+        redirect_to listings_path
       end
   end
 
