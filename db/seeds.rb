@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-for i in 1..10
+#for i in 1..10
     
-    Category.create(
-        name: Faker::Appliance.equipment     
-    )
-    puts "Created #{i} records"
-end
+#    Category.create(
+#        name: Faker::Appliance.equipment     
+#    )
+#    puts "Created #{i} records"
+#end
