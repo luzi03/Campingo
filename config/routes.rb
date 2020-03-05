@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+ 
   devise_for :users
   resources :profiles
   resources :listings
-
+  resources :users 
   
 
   get 'payments/success'

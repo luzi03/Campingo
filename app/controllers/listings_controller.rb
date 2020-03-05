@@ -40,7 +40,7 @@ end
 
   # GET /listings/new
   def new
-    @listing = Listing.new
+    @listing = current_user.listings.build 
   end
 
   # GET /listings/1/edit
@@ -50,7 +50,7 @@ end
   # POST /listings
   # POST /listings.json
   def create
-    @listing = current_user.listings.create(listing_params)
+    @listing = current_user.listings.build(listing_params)
 
     respond_to do |format|
       if @listing.save
@@ -90,7 +90,7 @@ end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
-      @listing = Listing.find(params[:id])
+      @listing = current_user.listings.find(params[:id])
     end
     
     # method to set user listing
