@@ -1,8 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :current, :index]
-  #before_action :force_update_current_user_profile, except: [:edit, :update]
-  
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /profiles
   # GET /profiles.json
@@ -13,6 +11,15 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @profile = current_user.profile
+    
+
+    if @profile.nil?
+      new
+      render 'new'
+    else
+      render 'show'
+    end
   end
 
   # GET /profiles/new
@@ -24,10 +31,16 @@ class ProfilesController < ApplicationController
   def edit
   end
 
+  def public 
+  end
+
+
   # POST /profiles
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    @profile.user_id = current_user.id
+
 
     respond_to do |format|
       if @profile.save

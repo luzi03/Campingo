@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   resources :profiles
   resources :listings
 
+  
+
+  get 'payments/success'
+  get "/payments/success", to: "payments#success"
+  post "/payments/webhook", to: "payments#webhook"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/", to: "pages#home", as: "root"
   
@@ -14,9 +20,5 @@ Rails.application.routes.draw do
   get '/userprofile/:id', to: 'profiles#public', as: 'userprofile_public'
   get '/myprofile/edit', to: 'profiles#edit', as: 'edit_myprofile'
 
-    
-  get 'payments/success'
-  get "/payments/success", to: "payments#success"
-  post "/payments/webhook", to: "payments#webhook"
 
 end
