@@ -2,7 +2,7 @@
 
 <% @conversation.receipts_for(current_user).each do |receipt| %>
     <div>
-    <div><%= receipt.message.sender.name %></div>
+    <div><%= receipt.message.sender.name %></div> <span> <%= receipt.message.created_at %>
     <p><%= receipt.message.body %></p>
     </div>
     <%end%>
