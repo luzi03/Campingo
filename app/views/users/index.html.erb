@@ -4,10 +4,9 @@
 <tbody>
   <% @users.each do |user| %>
   
-
     
-<p><%= user.user_name %></p>
-<%=link_to user.user_name, user_path(user)%>
+<p><strong>Username:</strong>
+<%=link_to user.username, user_path(user)%></p>
 
 <%end%>
 
