@@ -1,10 +1,14 @@
 <h1><%= @conversation.subject %></h1>
 
 <% @conversation.receipts_for(current_user).each do |receipt| %>
+    <p>-------------------------------------</p>
     <div>
-    <div><%= receipt.message.sender.name %></div> <span> <%= receipt.message.created_at %>
-    <p><%= receipt.message.body %></p>
+    <p><strong>Username:</strong><%= receipt.message.sender.name %></p> <p><strong>Sent at:</strong><%= receipt.message.created_at %></p>
     </div>
+    <div>
+    <p><strong>Message:</strong><%= receipt.message.body %></p>
+    </div>
+
     <%end%>
 
     <%= form_tag conversation_messages_path(@conversation), method: :post do %>
@@ -15,3 +19,4 @@
         <% end %>
 
  <%= link_to "Conversations", conversations_path %>
+ <%= link_to 'Users', users_path %>
