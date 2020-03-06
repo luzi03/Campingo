@@ -84,7 +84,7 @@ end
   def destroy
     @listing.destroy
     respond_to do |format|
-      format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
+      format.html { redirect_to listings_url, notice: 'Listing was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -108,7 +108,7 @@ end
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:title, :description, :category_id, :suburb, :city, :price, :deposit, :availability, :picture)
+      params.require(:listing).permit(:title, :description, :category_id, :suburb, :city, :price, :deposit, :availability, :picture, :user_id, :bought)
     end
 
   def set_category
