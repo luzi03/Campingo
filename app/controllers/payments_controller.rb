@@ -6,24 +6,25 @@ class PaymentsController < ApplicationController
     end
   
     def webhook
-        # payment_id= params[:data][:object][:payment_intent]
-        # payment = Stripe::PaymentIntent.retrieve(payment_id)
-        # listing_id = payment.metadata.listing_id
-        # user_id = payment.metadata.user_id
+         payment_id= params[:data][:object][:payment_intent]
+         payment = Stripe::PaymentIntent.retrieve(payment_id)
+         listing_id = payment.metadata.listing_id
+         user_id = payment.metadata.user_id
   
         # p "listing id " + listing_id
         # p "user id " + user_id
         event = Stripe::Event.construct_from(
             params.to_unsafe_h
         )
-  
+    
         # Handle the event
         case event.type
-        when 'payment_intent.succeeded'
+        when 'checkout.session.completed'
             payment_intent = event.data.object # contains a Stripe::PaymentIntent
-  
-            buyer = User.find(payment_intent.metadata.user_id)
-            listing = Listing.find(payment_intent.metadata.listing_id)
+            puts "WEBHOOK CALL====== #{event.type}"
+            
+            buyer = current_user
+            listing = Listing.find(listing_id)
             listing.bought = true
             listing.save
   

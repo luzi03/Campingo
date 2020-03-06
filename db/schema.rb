@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_011555) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.boolean "bought", default: false 
+    t.boolean "bought", default: false
     t.index ["category_id"], name: "index_listings_on_category_id"
   end
 
