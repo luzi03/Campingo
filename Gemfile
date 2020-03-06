@@ -80,3 +80,7 @@ gem "stripe", "~> 5.17"
 
 #ransack
 gem 'ransack', github: 'activerecord-hackery/ransack'
+
+
+#mailboxer
+gem 'mailboxer', github: 'mailboxer/mailboxer'

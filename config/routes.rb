@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   resources :listings
   resources :users 
-  
+  resources :conversations do
+    resources :messages
+  end
+
 
   get 'payments/success'
   get "/payments/success", to: "payments#success"

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<h1>All Conversations</h1>
+
+<div>
+<h2> Recent conversation </h2>
+<% @conversations.each do |conversation|%>
+    <%=link_to conversation.subject, conversation_path(conversation)%> 
+<%end%>
+</div>
+
+<div>
+<%= link_to "New Conversation", new_conversation_path %>
+<%= link_to "Back", listings_path %>
+</div>
