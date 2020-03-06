@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_one :profile
 
   def name
-    "User #{id}"
+    "#{username}"
   end
 
   def mailboxer_email(object)

@@ -2,16 +2,18 @@
 
 <%= form_tag conversations_path, method: :post do %>
     <div> 
-    <%=select_tag :user_id, options_from_collection_for_select %>
+    <%=select_tag :user_id, options_from_collection_for_select(@recipients, :id, :email) %>
     </div>
     
     <div>
-    <%=text_field_tag :subject, :placeholder: "Subject" %>
+    <%=text_field_tag :subject, nil, placeholder: "Subject" %>
     </div>
 
     <div>
-    <%=text_area_tag :body, :placeholder: "Leave a comment" %>
+    <%=text_area_tag :body, nil, placeholder: "Leave a comment" %>
     </div>
 
     <%= submit_tag %>
     <% end %>
+
+    <%= link_to "Conversations", conversations_path %>
