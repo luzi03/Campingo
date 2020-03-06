@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listings</h1>
+  <h1>Listings</h1>
+
+  <%= search_form_for @q do |f| %>
+    <%= f.search_field :title_or_description_or_suburb_cont %>
+        <% Category.all.each do |category|%>
+            <%= check_box_tag "q[category_name_cont_any][]", category.name%>
+            <%= category.name %>
+        <% end %>
+    <%= f.submit %>
+  <% end %>
+
 
 <table>
   <thead>
@@ -36,7 +46,7 @@
 
         <td><%= link_to 'Show', listing %></td>
         <td><%= link_to 'Edit', edit_listing_path(listing) if user_signed_in? and listing.user.id == current_user.id  %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? and listing.user.id == current_user.id  %></td>
+        <td><%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? and listing.user.id == current_user.id  %></td>
       </tr>
 
    <% end %>
