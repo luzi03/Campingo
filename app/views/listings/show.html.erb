@@ -1,9 +1,12 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
   <%= @listing.title %>
 </p>
+
+<%= image_tag @listing.picture if @listing.picture.attached? %>
 
 <p>
   <strong>Description:</strong>
@@ -42,9 +45,10 @@
 
 <p>
   <strong>User:</strong>
-  <%= @listing.user.email %>
+  <%= @listing.user.email %> 
 </p>
-      
+
+
 
 <button data-stripe="payment">
   Pay Deposit <%= number_to_currency(@listing.deposit) %>
@@ -70,3 +74,4 @@
 
 <%= link_to 'Edit', edit_listing_path(@listing) if user_signed_in? and @listing.user.id == current_user.id %>
 <%= link_to 'Back', listings_path %>
+</div>
