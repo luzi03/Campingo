@@ -21,7 +21,7 @@ class PaymentsController < ApplicationController
         case event.type
         when 'checkout.session.completed'
             payment_intent = event.data.object # contains a Stripe::PaymentIntent
-            puts "WEBHOOK CALL====== #{event.type}"
+            #puts "WEBHOOK CALL====== #{event.type}"
             
             buyer = current_user
             listing = Listing.find(listing_id)

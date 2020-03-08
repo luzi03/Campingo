@@ -9,6 +9,7 @@ class ListingsController < ApplicationController
   def index
       @q = Listing.ransack(params[:q])
       @listings = @q.result.includes(category: [])
+      
   end
 
   # GET /listings/1
@@ -37,6 +38,10 @@ class ListingsController < ApplicationController
 
     @session_id = session.id
     end 
+
+    @available_from = params[:from] 
+    @available_to = params[:to]
+
 end
 
 
@@ -108,7 +113,7 @@ end
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:title, :description, :category_id, :suburb, :city, :price, :deposit, :availability, :picture, :user_id, :bought)
+      params.require(:listing).permit(:title, :description, :category_id, :suburb, :city, :price, :deposit, :availability, :picture, :user_id, :bought, :to, :from)
     end
 
   def set_category
