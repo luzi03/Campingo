@@ -6,9 +6,11 @@ class User < ApplicationRecord
 
   acts_as_messageable
 
+ 
   has_many :listings
   has_many :orders
-  has_one :profile
+  
+
 
   def name
     "#{username}"
@@ -17,4 +19,5 @@ class User < ApplicationRecord
   def mailboxer_email(object)
     nil
   end
+
 end

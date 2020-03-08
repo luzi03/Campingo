@@ -84,3 +84,9 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 
 #mailboxer
 gem 'mailboxer', github: 'mailboxer/mailboxer'
+
+#gravatar
+gem 'gravatar_image_tag'
+
+#gravtastic
+gem 'gravtastic'
