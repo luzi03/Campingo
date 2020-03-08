@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   acts_as_messageable
 
- 
+
   has_many :listings
   has_many :orders
   

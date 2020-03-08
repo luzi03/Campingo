@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+
+#jquery-ui
+gem 'jquery-ui-rails'
+
 # Boostrap
 gem 'bootstrap', '~> 4.4.1'
 

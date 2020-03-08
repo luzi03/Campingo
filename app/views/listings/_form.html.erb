@@ -49,9 +49,14 @@
   </div>
 
   <div class="field">
-    <%= form.label :availability %>
-    <%= form.check_box :availability %>
+    <%= form.label :available_from %>
+    <%= form.text_field :available_from %>
   </div>
+
+  <div class="field">
+  <%= form.label :available_to %>
+  <%= form.text_field :available_to %>
+</div>
 
   <div class="field">
   <%= form.label :picture %> <%= form.file_field :picture, accept:
