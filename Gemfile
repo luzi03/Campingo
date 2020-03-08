@@ -5,10 +5,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #jquery-ui
 gem 'jquery-ui-rails'
 
-# Boostrap
-gem 'bootstrap', '~> 4.4.1'
 
 gem 'jquery-rails'
+
+# Boostrap
+gem 'bootstrap', '~> 4.4.1'
 
 ruby '2.6.5'
 

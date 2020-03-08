@@ -48,15 +48,17 @@
     <%= form.text_field :deposit %>
   </div>
 
-  <div class="field">
-    <%= form.label :available_from %>
-    <%= form.text_field :available_from %>
-  </div>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
 
-  <div class="field">
-  <%= form.label :available_to %>
-  <%= form.text_field :available_to %>
-</div>
+
+<p>Available From: <input type="text" id="datepicker"></p>
+<p id="notice"><%= notice %></p>
+  
+
 
   <div class="field">
   <%= form.label :picture %> <%= form.file_field :picture, accept:
