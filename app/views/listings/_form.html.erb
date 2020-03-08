@@ -1,3 +1,4 @@
+
 <div class="container">
 
 <%= form_with(model: listing, local: true) do |form| %>
@@ -48,17 +49,47 @@
     <%= form.text_field :deposit %>
   </div>
 
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
-
-
-<p>Available From: <input type="text" id="datepicker"></p>
-<p id="notice"><%= notice %></p>
+  <label for="from">From</label>
+  <input type="text" id="from" name="from">
+  <label for="to">to</label>
+  <input type="text" id="to" name="to">
   
+  <script>
+  var unavailableDates = ["19-2-2015", "20-2-2015", "23-2-2015", "24-2-2015"]
 
+  function unavailable(date) {
+      dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+      if (jQuery.inArray(dmy, unavailableDates) == -1) {
+          return [true, ""];
+      } else {
+          return [false, "", "Unavailable"];
+      }
+  }
+  
+  $(function() {
+      $( "#from" ).datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          beforeShowDay: unavailable,
+          numberOfMonths: 1,
+          dateFormat: 'dd/mm/yy',
+          onClose: function( selectedDate ) {
+              $( "#to" ).datepicker( "option", "minDate", selectedDate );
+          }
+      });
+      
+      $( "#to" ).datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          beforeShowDay: unavailable,
+          numberOfMonths: 1,
+          dateFormat: 'dd/mm/yy',
+          onClose: function( selectedDate ) {
+              $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+          }
+      });
+  });
+</script>
 
   <div class="field">
   <%= form.label :picture %> <%= form.file_field :picture, accept:
