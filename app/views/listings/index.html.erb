@@ -24,8 +24,8 @@
       <th>City</th>
       <th>Price</th>
       <th>Deposit</th>
-      <th>Available From</th>
-      <th>Available To</th>
+      <th>From</th>
+      <th>To</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -46,8 +46,8 @@
         <td><%= listing.city %></td>
         <td><%= listing.price %></td>
         <td><%= listing.deposit %></td>
-        <td><%= listing.available_from %></td>
-        <td><%= listing.available_to %></td>
+        <td><%= listing.from %></td>
+        <td><%= listing.to %></td>
 
         <td><%= link_to 'Show', listing %></td>
         <td><%= link_to 'Edit', edit_listing_path(listing) if user_signed_in? and listing.user.id == current_user.id  %></td>

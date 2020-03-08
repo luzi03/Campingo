@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-$('.listing_avaialable_from').datepicker (dateFormat: 'dd-mm-yy')
-$('.listing_avaialable_to').datepicker (dateFormat: 'dd-mm-yy')
+$('.listing_from').datepicker (dateFormat: 'dd-mm-yy')
+$('.listing_to').datepicker (dateFormat: 'dd-mm-yy')
