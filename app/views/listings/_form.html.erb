@@ -74,7 +74,15 @@
           numberOfMonths: 1,
           dateFormat: 'dd/mm/yy',
           onClose: function( selectedDate ) {
-              $( "#to" ).datepicker( "option", "minDate", selectedDate );
+              $( "#from" ).datepicker( "option", "minDate", selectedDate);
+
+              var jsDate = $('#from').datepicker('getDate');
+                if (jsDate !== null) { // if any date selected in datepicker
+                    jsDate instanceof Date; // -> true
+                    jsDate.getDate();
+                    jsDate.getMonth();
+                    jsDate.getFullYear();
+              }
           }
       });
       
@@ -85,11 +93,19 @@
           numberOfMonths: 1,
           dateFormat: 'dd/mm/yy',
           onClose: function( selectedDate ) {
-              $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+              $( "#to" ).datepicker( "option", "maxDate", selectedDate);
+             
+              var jsDate = $('#to').datepicker('getDate');
+              if (jsDate !== null) { // if any date selected in datepicker
+                  jsDate instanceof Date; // -> true
+                  jsDate.getDate();
+                  jsDate.getMonth();
+                  jsDate.getFullYear();
+            }
           }
       });
   });
-</script>
+  </script>
 
   <div class="field">
   <%= form.label :picture %> <%= form.file_field :picture, accept:

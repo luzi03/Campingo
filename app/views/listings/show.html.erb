@@ -1,4 +1,5 @@
 
+
 <div class="container">
 <p id="notice"><%= notice %></p>
 
@@ -41,13 +42,19 @@
 
 <p>
   <strong>From:</strong>
-  <%= @listing.from %>
+ <script>
+ var jsDate = $('#from').datepicker('getDate');
+</script>
+  
 </p>
+
 
 
 <p>
   <strong>To:</strong>
-  <%= @listing.to %>
+  <script>
+  var jsDate = $('#to').datepicker('getDate');
+  </script>
 </p>
 
 
