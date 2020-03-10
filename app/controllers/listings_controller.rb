@@ -9,7 +9,8 @@ class ListingsController < ApplicationController
   def index
       @q = Listing.ransack(params[:q])
       @listings = @q.result.includes(category: [])
-     
+      #var x = Listing.getElementById("datefrom")
+      #var y = Listing.getElementById("dateto")
       
   end
 
@@ -95,6 +96,9 @@ end
     end
   end
 
+ 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
@@ -122,3 +126,4 @@ end
   end
 
 end
+
