@@ -1,18 +1,22 @@
-<p id="notice"><%= notice %></p>
-<h1>Camingo Users</h1>
 
-<tbody>
-  <% @users.each do |user| %>
+
+
+
+ <p id="notice"><%= notice %></p>
+ <h1>Camingo Users</h1>
+
+ <tbody>
+   <% @users.each do |user| %>
   
     
-<p><strong>Username:</strong>
-<%=link_to user.username, user_path(user)%></p>
+ <p><strong>Username:</strong>
+ <%=link_to user.username, user_path(user)%></p>
 
-<%end%>
+ <%end%>
 
-</tbody>
+ </tbody>
 
 
 
-<%= link_to 'Listings', listings_path %>
+ <%= link_to 'Listings', listings_path %>
 
