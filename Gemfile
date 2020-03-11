@@ -9,6 +9,10 @@ gem 'jquery-ui-rails'
 
 gem 'jquery-rails'
 
+#fontawesome
+gem 'font-awesome-sass'
+
+
 # Boostrap
 gem 'bootstrap', '~> 4.4.1'
 
@@ -97,5 +101,3 @@ gem 'gravatar_image_tag'
 #gravtastic
 gem 'gravtastic'
 
-#fontawesome
-gem 'font-awesome-sass'
