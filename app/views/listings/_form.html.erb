@@ -48,11 +48,12 @@
     <%= form.label :deposit %>
     <%= form.text_field :deposit %>
   </div>
-
-  <label for="from">From</label>
-  <input type="text" id="from" name="from">
-  <label for="to">To</label>
-  <input type="text" id="to" name="to">
+  
+  
+  <label for="from"><%=:From%></label>
+  <input type="text" id="from" name="datefrom">
+  <label for="to"><%=:To%></label>
+  <input type="text" id="to" name="dateto">
 
   <script>
   var unavailableDates = ["19-2-2015", "20-2-2015", "23-2-2015", "24-2-2015"]

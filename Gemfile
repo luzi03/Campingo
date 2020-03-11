@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'jquery-ui-rails'
 
 
+
 gem 'jquery-rails'
 
 # Boostrap
