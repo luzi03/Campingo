@@ -31,8 +31,10 @@
                         </ul>
                         <form class="form-inline mr-auto" target="_self">
                             <div class="form-group"><label for="search-field"></label><input class="form-control search-field" type="search" id="search-field" name="search"></div>
-                        </form><span class="navbar-text"><a class="login" href="#">Log In</a></span><a class="btn btn-light action-button" role="button" href="#">Sign Up</a></div>
-                </div>
+                        </form><span class="navbar-text"><a class="login" <%= link_to "Login", new_user_session_path %></span><a class="btn btn-light action-button" role="button" <%= link_to "Sign up", new_user_registration_path %></div>
+              
+              
+                        </div>
             </nav>
             <div class="container hero">
                 <div class="row">
@@ -72,12 +74,13 @@
             <!-- Start: Intro -->
             <div class="intro">
                 <h2 class="text-center">About us</h2>
-                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+                <p class="text-center">Campingo is a marketplace where you can lease all the camping gear and equipment needed for your outdoor adventures. Campingo is a free an affordable option for those seeking to explore without the hassle of buying all the expensive equipment and storage </p>
             </div>
             <!-- End: Intro -->
             <!-- Start: Buttons -->
             <div class="buttons">
-            <div class= "text-center"><a class="btn btn-primary" role="button" href="#">Primary</a><button class="btn btn-light" type="button">Secondary</button></div>
+            #<div class= "text-center"><a class="btn btn-primary" role="button" <%= link_to "Login", new_user_session_path %> <button class="btn btn-light" type="button"><%= link_to "Register", new_user_registration_path%></div>
+            
             <!-- End: Buttons -->
         </div>
     </div>
