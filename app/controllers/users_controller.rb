@@ -3,6 +3,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_listings = @user.listings
     @users = User.all
+    
+   
   end
 
   def index

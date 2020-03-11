@@ -91,15 +91,19 @@
         <div class="container bg-white">
             <!-- Start: Intro -->
             <div class="intro">
-                <h2 class="text-center bg-white">Chat</h2>
+                <h1 class="text-center bg-white">Chats</h1>
             </div>
             <!-- End: Intro -->
         </div>
     </div>
+    
     <!-- End: Team Boxed -->
-    <% @conversations.each do |conversation|%>
+    <div class="text-center">
+    <h2>Inbox</h2>
+    <% @conversations.each do |conversation|%> <br>
         <%=link_to conversation.subject, conversation_path(conversation)%> 
     <%end%>
+    </div>
     </div>
     <!-- Start: 2 Rows 1+1 Columns -->
     <div>
@@ -116,7 +120,7 @@
         </div>
     </div>
     <!-- End: 2 Rows 1+1 Columns -->
-    <div>
+    <div class= "text-center">
 <%= link_to "New Conversation", new_conversation_path %>
 <%= link_to "Back to Listings", listings_path %>
 </div>

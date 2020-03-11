@@ -91,44 +91,45 @@
         <div class="container bg-white">
             <!-- Start: Intro -->
             <div class="intro">
-                <h2 class="text-center bg-white">New chats</h2>
+                <h2 class="text-center bg-white">Chats</h2>
             </div>
             <!-- End: Intro -->
         </div>
     </div>
     <!-- End: Team Boxed -->
     <!-- Start: 2 Rows 1+1 Columns -->
-    <div>
+    
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="clearfix"></div>
                     <div class="text-center">
-                    <h1>New Conversation</h1>
-
-<%= form_tag conversations_path, method: :post do %>
-    <div> 
-    <%=select_tag :user_id, options_from_collection_for_select(@recipients, :id, :email) %>
-    </div>
-    
-    <div>
-    <%=text_field_tag :subject, nil, placeholder: "Subject" %>
-    </div>
-
-    <div>
-    <%=text_area_tag :body, nil, placeholder: "Leave a comment" %>
-    </div>
-
-    <%= submit_tag %>
-    <% end %>
+                        <h3>New Conversation</h3>
+                <br>
+                <div>
+                <%= form_tag conversations_path, method: :post do %>
+                <div> 
+                <%=select_tag :user_id, options_from_collection_for_select(@recipients, :id, :email) %>
                 </div>
-            </div>
-    <!-- End: 2 Rows 1+1 Columns -->
+                <br>
+                <div>
+                <%=text_field_tag :subject, nil, placeholder: "Subject" %>
+                </div>
+                <br>
+                <div>
+                <%=text_area_tag :body, nil, placeholder: "Leave a comment" %>
+                </div>
+                <br>
+                <%= submit_tag %>
+                <% end %>
+                <br>
 
-<div> 
-<%= link_to "Conversations", conversations_path %>
+                <%= link_to "Conversations", conversations_path %>
+                <br>
+            </div>
+        </div>
+    </div>
 </div>
-</div>
+<!-- End: 2 Rows 1+1 Columns -->
     <!-- Start: Footer Basic -->
     <div class="footer-basic">
         <footer>
@@ -145,7 +146,7 @@
             </ul>
             <!-- End: Links -->
             <!-- Start: Copyright -->
-            <p class="copyright">Company Name © 2017</p>
+            <p class="copyright">Campingo © 2020</p>
             <!-- End: Copyright -->
         </footer>
     </div>
@@ -158,16 +159,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-

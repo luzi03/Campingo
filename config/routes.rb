@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :messages
   end
 
+  
+
 
   get 'payments/success'
   get "/payments/success", to: "payments#success"
