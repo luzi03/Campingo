@@ -146,6 +146,8 @@ GEM
     ffi (1.12.2-java)
     ffi (1.12.2-x64-mingw32)
     ffi (1.12.2-x86-mingw32)
+    font-awesome-sass (5.12.0)
+      sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     gravatar_image_tag (1.2.0)
@@ -325,6 +327,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.7)
   faker!
+  font-awesome-sass
   gravatar_image_tag
   gravtastic
   jbuilder (~> 2.5)

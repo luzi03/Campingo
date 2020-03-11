@@ -15,6 +15,8 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import "pages_home";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 :root {
     blue: #007bff;
@@ -77,6 +79,7 @@
 }
 
 /*header*/
+
   .header-dark {
     background: url(../../assets/img/mountain_bg.jpg) #444;
     background-size: cover;

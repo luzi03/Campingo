@@ -96,3 +96,6 @@ gem 'gravatar_image_tag'
 
 #gravtastic
 gem 'gravtastic'
+
+#fontawesome
+gem 'font-awesome-sass'

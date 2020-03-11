@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="https://use.fontawesome.com/88b5137ddf.js"></script>
     <link rel="stylesheet" href="/assets/css/styles.min.css?h=90f8bd7bd325d5a1bbe7cb95eaa88ec1">
     <link rel="stylesheet" href="/assets/stylesheets/application.scss">
     <link rel="stylesheet" href="/assets/stylesheets/pages_home.scss">
@@ -78,8 +79,11 @@
             <!-- End: Intro -->
             <!-- Start: Buttons -->
             <div class="buttons">
-            #<div class= "text-center"><a class="btn btn-primary" role="button" <%= link_to "Login", new_user_session_path %> <button class="btn btn-light" type="button"><%= link_to "Register", new_user_registration_path%></div>
-            
+            <div class= "text-center"><%= link_to "Login", new_user_session_path, class: "btn btn-primary"%> 
+            <%= link_to "Register", new_user_registration_path, class: "btn btn-light"%>
+            </div>
+            </div>
+ 
             <!-- End: Buttons -->
         </div>
     </div>
@@ -93,34 +97,33 @@
             <!-- Start: Intro -->
             <div class="intro">
                 <h2 class="text-center">Features</h2>
-                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
             </div>
             <!-- End: Intro -->
             <!-- Start: Features -->
             <div class="row features">
-                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-map-marker icon"></i>
+                <div class="col-sm-6 col-lg-4 item"><span style="font-size: 3em; color: #17a2b8;"><i class="fas fa-map-marked fa-sm fa-spin"></i></span>
                     <h3 class="name">Works everywhere</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                    <p class="description">Campingo allows you to find camping gear wherever you are</p>
                 </div>
-                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-clock-o icon"></i>
-                    <h3 class="name">Always available</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                <div class="col-sm-6 col-lg-4 item"><span style="font-size: 3em; color: #17a2b8;"><i class="fas fa-leaf fa-sm fa-spin"></i></span>
+                    <h3 class="name">Eco friendly</h3>
+                    <p class="description">Campingo allows users to lease and lend their gear and equipment and save money and the environment</p>
                 </div>
-                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-list-alt icon"></i>
-                    <h3 class="name">Customizable</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                <div class="col-sm-6 col-lg-4 item"><span style="font-size: 3em; color: #17a2b8;"><i class="fas fa-compass fa-sm fa-spin"></i></span>
+                    <h3 class="name">Search made easy</h3>
+                    <p class="description">Campingo allows you to narrow your search, making your leasing experience fast and easy</p>
                 </div>
-                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-leaf icon"></i>
-                    <h3 class="name">Organic</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                <div class="col-sm-6 col-lg-4 item"><span style="font-size: 3em; color: #17a2b8;"><i class="fab fa-stripe fa-sm fa-spin"></i></span>
+                    <h3 class="name">Pay Safely</h3>
+                    <p class="description">We use stripe as a payment method, which a safe and reliable software to make payments online</p>
                 </div>
-                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-plane icon"></i>
+                <div class="col-sm-6 col-lg-4 item"><span style="font-size: 3em; color: #17a2b8;"><i class="fas fa-paper-plane fa-sm fa-spin"></i></span>
                     <h3 class="name">Fast</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                    <p class="description">Campingo is a great option for your last minute roadtrips</p>
                 </div>
-                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-phone icon"></i>
-                    <h3 class="name">Mobile-first</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                <div class="col-sm-6 col-lg-4 item"><span style="font-size: 3em; color: #17a2b8;"><i class="fas fa-envelope-open-text fa-sm fa-spin"></i></span>
+                    <h3 class="name">In app messages</h3>
+                    <p class="description">Campingo allows you to interact and enquire about listings through it's built in in app messages feature</p>
                 </div>
             </div>
             <!-- End: Features -->
@@ -133,7 +136,7 @@
             <!-- Start: Intro -->
             <div class="intro">
                 <h2 class="text-center">Camping gear</h2>
-                <p class="text-center">Lease camping gear by category</p>
+                <p class="text-center">Lease and Lend camping gear and equipment by categories</p>
             </div>
             <!-- End: Intro -->
             <!-- Start: Projects -->
@@ -267,24 +270,13 @@
 
 
 
-<<<<<<< HEAD
 
-</div>
+ <%= link_to "Listings", listings_path %> |
 
+  <%= link_to "Conversations", conversations_path %> |
 
- <%= link_to 'Listings', listings_path %> |
-=======
->>>>>>> chat
+  <%= link_to 'Users', users_path %> |
 
+ <%= link_to "Sign up", new_user_registration_path %> |
 
-
-# <%= link_to "Listings", listings_path %>
-
-#  <%= link_to "Conversations", conversations_path %> |
-
-#  <%= link_to 'Users', users_path %>
-
-
-# <%= link_to "Sign up", new_user_registration_path %>
-
-# <%= link_to 'Login', new_user_session_path %>
+ <%= link_to 'Login', new_user_session_path %> |
