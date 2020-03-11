@@ -465,10 +465,10 @@
   /*carousel*/
 
   .w-100 {
-    width: 100%!important;
+    width: 100% !important;
 }
 .d-block {
-    display: block!important;
+    display: block !important;
 }
 *, ::after, ::before {
   box-sizing: border-box;
@@ -480,20 +480,20 @@
   overflow: hidden;
 }
 .carousel {
-  position: relative;
+    position: relative;
 }
 
-  .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;%3csvg xmlns='homepage1.jpg' fill='%23fff' …%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' …%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
   
-    .carousel-control-next-icon, .carousel-control-prev-icon {
+  .carousel-control-next-icon, .carousel-control-prev-icon {
       display: inline-block;
       width: 20px;
       height: 20px;
       background: no-repeat 50%/100% 100%;
   }
 
-  .carousel-control-next {
+.carousel-control-next {
     right: 0;
 }
 .carousel-control-next, .carousel-control-prev {
@@ -514,7 +514,7 @@
     transition: opacity .15s ease;
 }
 
-
+/*end carousel*/
 
 /*footer*/
 
@@ -668,7 +668,6 @@
 
 
 
-/*devise*/
 
     /*register*/
 .register-photo {
@@ -815,6 +814,6 @@
     color:#6f7a85;
     opacity:.9;
     text-decoration:none;
+  }
 
 }
-  }
