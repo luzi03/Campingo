@@ -9,12 +9,14 @@ gem 'jquery-ui-rails'
 
 gem 'jquery-rails'
 
+
+# Boostrap
+gem 'bootstrap', '~> 4.4.1'
+
 #fontawesome
 gem 'font-awesome-sass'
 
 
-# Boostrap
-gem 'bootstrap', '~> 4.4.1'
 
 ruby '2.6.5'
 
