@@ -70,83 +70,75 @@
     <!-- End: Header Dark -->
     <br>
     <br>
-    <!-- Start: Registration Form with Photo -->
-    <div class="text-center">
-    <div class="bg-white register-photo">
-        <!-- Start: Form Container -->
-        <div class="form-container">
-            <!-- Start: Image -->
-            <div class="image-holder"></div>
-            <!-- End: Image -->
-            <!-- Start: Registration Form with Photo -->
+    <!-- Start: Login Form Clean -->
+    <div class= "text-center"
+    <div class="bg-white login-clean">
+        <form method="post">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-navigate fa-sm fa-spin"></i></div>
+            <div class="form-group">
             <h2>Log in</h2>
+    
+        <div><%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        
+            <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password" %>
+          </div>
+        
+          <% if devise_mapping.rememberable? %>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
             </div>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+          <% end %>
+        
+          <div class="actions">
+            <%= f.submit "Log in" %>
+            <% end %>
+          </div>
+          <div>
+        <br>
+        
+        <%= render "devise/shared/links" %>
+     
+        </div>
+        </div>
+        <br>
+    <!-- End: Login Form Clean -->
+    <h1></h1>
+    <p></p>
+    <!-- Start: Footer Basic -->
+    <div class="footer-basic">
+        <footer>
+            <!-- Start: Social Icons -->
+            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <!-- End: Social Icons -->
+            <!-- Start: Links -->
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <!-- End: Links -->
+            <!-- Start: Copyright -->
+            <p class="copyright">Campingo © 2020</p>
+            <!-- End: Copyright -->
+        </footer>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-<br>
-<br>
-<br>
-<br>
-<%= render "devise/shared/links" %>
-
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<!-- End: Registration Form with Photo -->
-<!-- Start: Footer Basic -->
-<div class="footer-basic">
-    <footer>
-        <!-- Start: Social Icons -->
-        <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
-        <!-- End: Social Icons -->
-        <!-- Start: Links -->
-        <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Home</a></li>
-            <li class="list-inline-item"><a href="#">Services</a></li>
-            <li class="list-inline-item"><a href="#">About</a></li>
-            <li class="list-inline-item"><a href="#">Terms</a></li>
-            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-        </ul>
-        <!-- End: Links -->
-        <!-- Start: Copyright -->
-        <p class="copyright">Campingo © 2020</p>
-        <!-- End: Copyright -->
-    </footer>
-</div>
-<!-- End: Footer Basic -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- End: Footer Basic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
-
-
-
-
 
 
 

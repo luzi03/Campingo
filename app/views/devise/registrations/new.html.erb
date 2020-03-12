@@ -71,6 +71,7 @@
     <h1></h1>
     <p></p>
     <!-- Start: Registration Form with Photo -->
+    <div class="text-center">
     <div class="bg-white register-photo">
         <!-- Start: Form Container -->
         <div class="form-container">
@@ -78,9 +79,8 @@
             <div class="image-holder"></div>
             <!-- End: Image -->
             <!-- Start: Registration Form with Photo -->
-            <div class="text-center">
             <h2>Sign up</h2>
-            </div>
+            <br>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -117,15 +117,16 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
+<br>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
-
+<br>
+        <%= render "devise/shared/links" %>
     </div>
+</div>
+</div>
     <!-- End: Registration Form with Photo -->
     <!-- Start: Footer Basic -->
     <div class="footer-basic">
