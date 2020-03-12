@@ -68,59 +68,23 @@
         </div>
     </div>
     <!-- End: Header Dark -->
-    <!-- Start: Article Dual Column -->
     <br>
     <br>
-
-    <div class="article-dual-column">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 offset-md-1">
-                    <!-- Start: Intro -->
-                    <div class="intro">
-                        <h1 class="text-center">Edit listing</h1>
-                        <!-- Start: Date and Author -->
-                        <p class="text-center"> </p>
-                        <!-- End: Date and Author --><img class="img-fluid d-xl-flex justify-content-xl-center align-items-xl-center" src="/assets/img/desk.jpg?h=a0f002544307fb7a08c2fd4a795dbac7"></div>
-                    <!-- End: Intro -->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-10 col-lg-3 offset-md-1">
-                    <!-- Start: Toc -->
-                    <div class="toc">
-                        <p>Table of Contents</p>
-                        <ul>
-                            <li><a href="#">Aliquam In Arcu </a> </li>
-                            <li><a href="#">Ut vehicula rhoncus</a></li>
-                            <li><a href="#">Lorem Ipsum </a> </li>
-                            <li><a href="#">Dolor sit amet</a> </li>
-                        </ul>
-                    </div>
-                    <!-- End: Toc -->
-                </div>
-                <div class="col-md-10 col-lg-7 offset-md-1 offset-lg-0">
-                    <!-- Start: Text -->
-                    <div class="text">
-                        <p>
-                 
-<%= render "form", listing: @listing, category: @categories %>
+    <!-- Start: Text -->
+   
+                        <div class="text-center">
+                        <h1>Edit Listing</h1>
+                   
+                        <%= render "form", listing: @listing, category: @categories %>
                      
-     <%= link_to 'Show', @listing %> |
-     <%= link_to 'Back', listings_path %>
-                        </p>
-                    </div>
-                    <!-- End: Text -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End: Article Dual Column -->
-    <h1></h1>
-    <p></p>
-    <!-- Start: Article Clean -->
-    <div class="article-clean"></div>
-    <!-- End: Article Clean -->
+                       
+                        <br>
+                        <div class="buttons">
+                        <%= link_to 'Show', @listing , class: "btn btn-primary" %>
+                        <%= link_to 'Back', listings_path, class: "btn btn-primary" %>
+                       
+                        </div>
+<!-- End: Text -->
     <!-- Start: Footer Basic -->
     <div class="footer-basic">
         <footer>
