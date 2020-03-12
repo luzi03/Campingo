@@ -3,8 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /*listings index*/
-
-
+// .btn 
+// .btn-primary {
+//   color: #fff;
+//   background-color: #fd7e14;
+//   border-color: #fd7e14;
+// }
 
 .projects-clean {
     color: #313437;
@@ -182,3 +186,7 @@
   }
   
 /*end of single listing*/  
+
+.pagination {
+  justify-content: center;
+}
