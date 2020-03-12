@@ -1,4 +1,23 @@
 
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Select a Date Range</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type=text/javascript src="your_jquery_ui.js"></script>
+  <script type=text/javascript src="your_jquery_ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="bootstrap-datepicker.standalone.css">
+  
+
+  </head>
+<body>
+
+<div class="container">
 
 <%= form_with(model: listing, local: true) do |form| %>
   <% if listing.errors.any? %>
@@ -47,49 +66,11 @@
     <%= form.label :deposit %>
     <%= form.text_field :deposit %>
   </div>
-  
-  
-  <label for="from">From</label>
-  <input type="text" id="from" name="from">
-  <label for="to">to</label>
-  <input type="text" id="to" name="to">
 
-  <script>
-  var unavailableDates = ["19-2-2015", "20-2-2015", "23-2-2015", "24-2-2015"]
-
-function unavailable(date) {
-    dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-    if (jQuery.inArray(dmy, unavailableDates) == -1) {
-        return [true, ""];
-    } else {
-        return [false, "", "Unavailable"];
-    }
-}
-
-$(function() {
-    $( "#from" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        beforeShowDay: unavailable,
-        numberOfMonths: 1,
-        dateFormat: 'dd/mm/yy',
-        onClose: function( selectedDate ) {
-            $( "#to" ).datepicker( "option", "minDate", selectedDate );
-        }
-    });
-    
-    $( "#to" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        beforeShowDay: unavailable,
-        numberOfMonths: 1,
-        dateFormat: 'dd/mm/yy',
-        onClose: function( selectedDate ) {
-            $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-        }
-    });
-});
-  </script>
+<label for="from">From</label>
+<input type="date" id="from" name="from" dateFormat = "mm/dd/yy">
+<label for="to">to</label>
+<input type="date" id="to" name="to" dateFormat = "mm/dd/yy">
 
   <div class="field">
   <%= form.label :picture %> <%= form.file_field :picture, accept:
@@ -101,3 +82,7 @@ $(function() {
   </div>
 
 <% end %>
+
+  </div>
+  </body>
+</html>

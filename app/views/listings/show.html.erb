@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="/assets/stylesheets/application.scss">
     <link rel="stylesheet" href="/assets/stylesheets/listings.scss">
     <script src="https://use.fontawesome.com/88b5137ddf.js"></script>
+    <link href="styles/glDatePicker.default.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="your_jquery_ui.js"></script>
+    
 
 </head>
 
@@ -72,14 +75,18 @@
     <br>
     <!-- Start: Text -->
       <div class="text-center">
-          
-                                            
+                                                     
     <p>
-      <strong>Title:
-      <%= @listing.title %></strong>
+      <strong>Title:</strong>
+      <%= @listing.title %>
     </p>
-
-    <%= image_tag @listing.picture if @listing.picture.attached? %>
+    
+<%if @listing.picture.attached?%>
+    <%= image_tag @listing.picture, width: "500px"%>
+  <%else%>
+  <%=image_tag 'default.jpg'%>
+    <%end%>
+    
 
     <p>
       <strong>Description:</strong>
@@ -113,14 +120,14 @@
 
     <p>
       <strong>From:</strong>
-      <%=  %>
+      <%= @listing.from %>
     </p>
 
 
 
     <p>
       <strong>To:</strong>
-      <%=  %>
+      <%= @listing.to %>
     </p>
 
 
@@ -158,22 +165,13 @@
         <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-primary" if user_signed_in? and @listing.user.id == current_user.id %>
         <%= link_to 'Back', listings_path, class: "btn btn-primary" %> 
         </div>
-      
-
-
-                        </p>
-                    </div>
-                    <!-- End: Text -->
-                </div>
-            </div>
-        </div>
+</p>
     </div>
-    <!-- End: Article Dual Column -->
-    <h1></h1>
-    <p></p>
-    <!-- Start: Article Clean -->
-    <div class="article-clean"></div>
-    <!-- End: Article Clean -->
+      <!-- End: Text -->
+     </div>
+   </div>
+</div>
+    </div>
     <!-- Start: Footer Basic -->
     <div class="footer-basic">
         <footer>

@@ -11,15 +11,15 @@ class ListingsController < ApplicationController
       @listings = @q.result.includes(category: [])
       @totallistings = Listing.all
       @totallistings.sort_by(&:created_at)
-      console
-      #var x = Listing.getElementById("datefrom")
-      #var y = Listing.getElementById("dateto")
+
       
   end
 
   # GET /listings/1
   # GET /listings/1.json
   def show
+
+
     if current_user #user_signed_in?
     session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
@@ -46,6 +46,7 @@ class ListingsController < ApplicationController
 
     @available_from = params[:from] 
     @available_to = params[:to]
+
 
 end
 
@@ -128,5 +129,5 @@ end
     @categories = Category.all 
   end
 
-end
 
+end

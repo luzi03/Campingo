@@ -11,12 +11,15 @@
  * It is generally better to create a new file per style scope.
  *
  *= require jquery-ui/datepicker
+ *= require daterangepicker
  */
 // Custom bootstrap variables must be set or imported *before* bootstrap.
+
 @import "bootstrap";
 @import "pages_home";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
 
 :root {
     blue: #007bff;

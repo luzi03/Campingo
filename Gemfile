@@ -8,14 +8,11 @@ gem 'jquery-ui-rails'
 
 
 gem 'jquery-rails'
-
+gem 'momentjs-rails'
+gem 'bootstrap-daterangepicker-rails'
 
 # Boostrap
 gem 'bootstrap', '~> 4.4.1'
-
-#fontawesome
-gem 'font-awesome-sass'
-
 
 
 ruby '2.6.5'
@@ -103,3 +100,8 @@ gem 'gravatar_image_tag'
 #gravtastic
 gem 'gravtastic'
 
+#simple-form
+gem 'simple_form'
+
+#fontawesome
+gem 'font-awesome-sass'

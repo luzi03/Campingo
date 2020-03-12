@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery-ui/widgets/datepicker
 //= require jquery_ujs
-
+//= require bootstrap
+//=require bootstrap-sprockets
+//= require moment
+//= require daterangepicker
