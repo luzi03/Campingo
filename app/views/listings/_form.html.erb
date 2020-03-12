@@ -1,5 +1,5 @@
 
-<div class="container">
+
 
 <%= form_with(model: listing, local: true) do |form| %>
   <% if listing.errors.any? %>
@@ -50,62 +50,46 @@
   </div>
   
   
-  <label for="from"><%=:From%></label>
-  <input type="text" id="from" name="datefrom">
-  <label for="to"><%=:To%></label>
-  <input type="text" id="to" name="dateto">
+  <label for="from">From</label>
+  <input type="text" id="from" name="from">
+  <label for="to">to</label>
+  <input type="text" id="to" name="to">
 
   <script>
   var unavailableDates = ["19-2-2015", "20-2-2015", "23-2-2015", "24-2-2015"]
 
-  function unavailable(date) {
-      dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-      if (jQuery.inArray(dmy, unavailableDates) == -1) {
-          return [true, ""];
-      } else {
-          return [false, "", "Unavailable"];
-      }
-  }
-  
-  $(function() {
-      $( "#from" ).datepicker({
-          defaultDate: "+1w",
-          changeMonth: true,
-          beforeShowDay: unavailable,
-          numberOfMonths: 1,
-          dateFormat: 'dd/mm/yy',
-          onClose: function( selectedDate ) {
-              $( "#from" ).datepicker( "option", "minDate", selectedDate);
+function unavailable(date) {
+    dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+    if (jQuery.inArray(dmy, unavailableDates) == -1) {
+        return [true, ""];
+    } else {
+        return [false, "", "Unavailable"];
+    }
+}
 
-              var jsDate = $('#from').datepicker('getDate');
-                if (jsDate !== null) { // if any date selected in datepicker
-                    jsDate instanceof Date; // -> true
-                    jsDate.getDate();
-                    jsDate.getMonth();
-                    jsDate.getFullYear();
-              }
-          }
-      });
-      
-      $( "#to" ).datepicker({
-          defaultDate: "+1w",
-          changeMonth: true,
-          beforeShowDay: unavailable,
-          numberOfMonths: 1,
-          dateFormat: 'dd/mm/yy',
-          onClose: function( selectedDate ) {
-              $( "#to" ).datepicker( "option", "maxDate", selectedDate);
-             
-              var jsDate = $('#to').datepicker('getDate');
-              if (jsDate !== null) { // if any date selected in datepicker
-                  jsDate instanceof Date; // -> true
-                  jsDate.getDate();
-                  jsDate.getMonth();
-                  jsDate.getFullYear();
-            }
-          }
-      });
-  });
+$(function() {
+    $( "#from" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        beforeShowDay: unavailable,
+        numberOfMonths: 1,
+        dateFormat: 'dd/mm/yy',
+        onClose: function( selectedDate ) {
+            $( "#to" ).datepicker( "option", "minDate", selectedDate );
+        }
+    });
+    
+    $( "#to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        beforeShowDay: unavailable,
+        numberOfMonths: 1,
+        dateFormat: 'dd/mm/yy',
+        onClose: function( selectedDate ) {
+            $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+        }
+    });
+});
   </script>
 
   <div class="field">
@@ -116,5 +100,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>
-</div>
