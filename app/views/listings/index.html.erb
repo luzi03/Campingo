@@ -77,72 +77,40 @@
             <!-- Start: Intro -->
             <div class="intro">
                 <h2 class="text-center">Camping Gear</h2>
-                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
-                
-                    <%= search_form_for @q do |f| %>
-                    <%= f.search_field :title_or_description_or_suburb_cont %>
-                    <% Category.all.each do |category|%>
-                    <%= check_box_tag "q[category_name_cont_any][]", category.name%><%= category.name %><% end %><%= f.submit %>
-                    <% end %>
-                    </div>
+                <p class="text-center">Take a look at our collection</p>
+            </div>
+            <br>
+            <br>
+            
+            <div class="text-center">
+            <%= search_form_for @q do |f| %>
+            <%= f.search_field :title_or_description_or_suburb_cont %>
+            <% Category.all.each do |category|%>
+            <%= check_box_tag "q[category_name_cont_any][]", category.name%>
+            <%= category.name %><% end %>
+            <%= f.submit %>
+                <% end %>
+            </div>
             <!-- End: Intro -->
             <!-- Start: Projects -->
-
-            <% @listings.each do |listing| %>
-                <% if !listing.bought? then %>
-                <tr>
-                <div class="card">
-                
-               
-                    <td><%= listing.title %></td>
-                    <td><%= image_tag listing.picture if listing.picture.attached? %></td>
-                    <td><%= listing.description %></td>
-                    <td><%= listing.category.name %></td>
-                    <td><%= listing.suburb %></td>
-                    <td><%= listing.city %></td>
-                    <td><%= listing.price %></td>
-                    <td><%= listing.deposit %></td>
-                    <td><%= listing.from %></td>
-                    <td><%= listing.to %></td>
-            
-                    <td><%= link_to 'Show', listing %></td>
-                    <td><%= link_to 'Edit', edit_listing_path(listing) if user_signed_in? and listing.user.id == current_user.id  %></td>
-                    <td><%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? and listing.user.id == current_user.id  %></td>
-                  </div>
-                    </tr>
-            
-               <% end %>
-               <% end %>
-
-
-
-
+    
             <div class="row projects">
-                <div class="col-sm-6 col-lg-4 item"><img class="img-fluid" src="/assets/img/desk.jpg?h=a0f002544307fb7a08c2fd4a795dbac7">
-                    <h3 class="name">Project Name</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
+            <% @totallistings.each do |listing| %>
+                <% if !listing.bought? then %>
+                <div class="col-sm-6 col-lg-4 item"><img class="img-fluid" <%= image_tag listing.picture if listing.picture.attached? %>
+                    <h3 class="name"><%= listing.title%></h3>
+                    <p class="description">description: <%= listing.description%></p>
+                    <p class="description">category: <%= listing.category.name %></p>
+                    <p class="description">price: <%= listing.price%></p>
+                    <p class="description">location: <%= listing.suburb%></p>
+                 <%= link_to 'Show', listing %>|
+                 <%= link_to 'Edit', edit_listing_path(listing) if user_signed_in? and listing.user.id == current_user.id  %>|
+                  <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? and listing.user.id == current_user.id  %>
                 </div>
-                <div class="col-sm-6 col-lg-4 item"><img class="img-fluid" src="/assets/img/building.jpg?h=b1c3de7424e00311158f27acdb8b4a66">
-                    <h3 class="name">Project Name</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
-                </div>
-                <div class="col-sm-6 col-lg-4 item"><img class="img-fluid" src="/assets/img/loft.jpg?h=c117158df5ec52b4c12fbde79ed86a2e">
-                    <h3 class="name">Project Name</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
-                </div>
-                <div class="col-sm-6 col-lg-4 item"><img class="img-fluid" src="/assets/img/minibus.jpeg?h=f73e60352530840d6f5404f27e257aa6">
-                    <h3 class="name">Project Name</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
-                </div>
-                <div class="col-sm-6 col-lg-4 item"><img class="img-fluid" src="/assets/img/minibus.jpeg?h=f73e60352530840d6f5404f27e257aa6">
-                    <h3 class="name">Project Name</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
-                </div>
-                <div class="col-sm-6 col-lg-4 item"><img class="img-fluid" src="/assets/img/minibus.jpeg?h=f73e60352530840d6f5404f27e257aa6">
-                    <h3 class="name">Project Name</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
-                </div>
+                <%end%>
+                <%end%>
             </div>
+            
             <!-- End: Projects -->
         </div>
     </div>

@@ -9,6 +9,9 @@ class ListingsController < ApplicationController
   def index
       @q = Listing.ransack(params[:q])
       @listings = @q.result.includes(category: [])
+      @totallistings = Listing.all
+      @totallistings.sort_by(&:created_at)
+      console
       #var x = Listing.getElementById("datefrom")
       #var y = Listing.getElementById("dateto")
       
