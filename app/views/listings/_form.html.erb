@@ -67,10 +67,17 @@
     <%= form.text_field :deposit %>
   </div>
 
-<label for="from">From</label>
-<input type="date" id="from" name="from" dateFormat = "mm/dd/yy">
-<label for="to">to</label>
-<input type="date" id="to" name="to" dateFormat = "mm/dd/yy">
+
+  <div class="field">
+  <%= form.label :Available_From %>
+  <%= form.date_field :from %>
+  </div>
+
+
+  <div class="field">
+  <%= form.label :Available_To %>
+  <%= form.date_field :to %>
+  </div>
 
   <div class="field">
   <%= form.label :picture %> <%= form.file_field :picture, accept:
@@ -83,6 +90,6 @@
 
 <% end %>
 
-  </div>
-  </body>
+</div>
+</body>
 </html>

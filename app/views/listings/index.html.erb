@@ -96,14 +96,20 @@
             <!-- Start: Projects -->
     
             <div class="row projects">
-            <% @totallistings.each do |listing| %>
+            <% @listings.each do |listing| %>
                 <% if !listing.bought? then %>
-                <div class="col-sm-6 col-lg-4 item"><img class="img-fluid" <%= image_tag listing.picture if listing.picture.attached? %>
+                <div class="col-sm-6 col-lg-4 item">
+                <% if listing.picture.attached? %>
+                <%= image_tag listing.picture, width: "200px" %>
+                <% else %>
+                <%= image_tag 'default.jpg', width: "200px" %>
+                <% end %>
+                
                     <h3 class="name"><%= listing.title%></h3>
-                    <p class="description">description: <%= listing.description%></p>
-                    <p class="description">category: <%= listing.category.name %></p>
-                    <p class="description">price: <%= listing.price%></p>
-                    <p class="description">location: <%= listing.suburb%></p>
+                    <p class="description">description: <%= listing.description%></p><br>
+                    <p class="category">category: <%= listing.category.name %></p>
+                    <p class="price">price: <%= listing.price%></p>
+                    <p class="location">location: <%= listing.suburb%></p>
                  <%= link_to 'Show', listing %>|
                  <%= link_to 'Edit', edit_listing_path(listing) if user_signed_in? and listing.user.id == current_user.id  %>|
                   <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? and listing.user.id == current_user.id  %>

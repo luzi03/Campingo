@@ -11,14 +11,13 @@ class ListingsController < ApplicationController
       @listings = @q.result.includes(category: [])
       @totallistings = Listing.all
       @totallistings.sort_by(&:created_at)
-
       
+     
   end
 
   # GET /listings/1
   # GET /listings/1.json
   def show
-
 
     if current_user #user_signed_in?
     session = Stripe::Checkout::Session.create(
@@ -43,11 +42,6 @@ class ListingsController < ApplicationController
 
     @session_id = session.id
     end 
-
-    @available_from = params[:from] 
-    @available_to = params[:to]
-
-
 end
 
 

@@ -80,14 +80,13 @@
       <strong>Title:</strong>
       <%= @listing.title %>
     </p>
-    
+
 <%if @listing.picture.attached?%>
     <%= image_tag @listing.picture, width: "500px"%>
   <%else%>
-  <%=image_tag 'default.jpg'%>
+  <%=image_tag 'default.jpg', width: "500px"%>
     <%end%>
     
-
     <p>
       <strong>Description:</strong>
       <%= @listing.description %>
@@ -119,23 +118,22 @@
     </p>
 
     <p>
-      <strong>From:</strong>
-      <%= @listing.from %>
+    
+    <strong>Lease Start:</strong>
+    <%= @listing.from.strftime("%d/%m/%Y") %>
     </p>
 
 
-
     <p>
-      <strong>To:</strong>
-      <%= @listing.to %>
+    <strong>Lease End:</strong>
+    <%=  @listing.to.strftime("%d/%m/%Y") %>
     </p>
 
 
     <p>
       <strong>User:</strong>
-      <%= @listing.user.email %> 
+      <%= @listing.user.username %> 
     </p>
-
 
 
     <button data-stripe="payment">
