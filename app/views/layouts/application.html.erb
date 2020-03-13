@@ -8,17 +8,13 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
   <% if user_signed_in? %>
-  <%= link_to "logout", destroy_user_session_path, method: :delete %>
-  <%= link_to 'Your Chats', conversations_path %></li>
+  <a class="navbar-text"><a class="btn btn-light action-button" role="button" <%= link_to "Logout", destroy_user_session_path, method: :delete %></div>
 <% else %>
-  <%= link_to "login", new_user_session_path %>
+  <a class="btn btn-light" type="button"><%= link_to "login", new_user_session_path %></button>
 <% end %>
-
-  <%#= link_to "logout", destroy_user_session_path, method: :delete %>
     <%= yield %>
   </body>
-
 </html>
+

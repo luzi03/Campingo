@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
  
+  #devise generated routes
   devise_for :users
+
   resources :listings
+
   resources :users 
+
   resources :conversations do
     resources :messages
   end
 
   
-
-
+ #stripe routes 
   get 'payments/success'
   get "/payments/success", to: "payments#success"
   post "/payments/webhook", to: "payments#webhook"
