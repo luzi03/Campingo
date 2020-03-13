@@ -103,7 +103,9 @@
                 <% else %>
                 <%= image_tag 'default.jpg', width: "200px" %>
                 <% end %>
-                    <h4 class="name"><strong>Username:</strong><%=link_to user.username, user_path(user)%></h4>
+                <br>
+                <br>
+                    <h5 class="name"><strong>Username:</strong><%=link_to user.username, user_path(user)%></h5>
                     <p class="bio"><strong>Bio:</strong> <%=link_to user.bio, user_path(user)%></p>
                     <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
             </div>
