@@ -31,7 +31,7 @@
                         </ul>
                         <form class="form-inline mr-auto" target="_self">
                             <div class="form-group"><label for="search-field"></label><input class="form-control search-field" type="search" id="search-field" name="search"></div>
-                        </form><span class="navbar-text"><a class="login" <%= link_to "Login", new_user_session_path %></span><a class="btn btn-light action-button" role="button" <%= link_to "Sign up", new_user_registration_path %></div>
+                            </form><span class="navbar-text"><a class="btn btn-light action-button" role="button" <%= link_to "Logout", destroy_user_session_path %></div>
                         </div>
             </nav>
             <div class="container hero">
@@ -110,6 +110,10 @@
             </div>
         <% end %>
     </div>
+
+<div class="text-center">
+ <%= link_to 'Back to Listings', listings_path %>
+ </div>
             <!-- End: People -->
         </div>
     </div>
@@ -145,5 +149,4 @@
 </html>
 
 
- <%= link_to 'Listings', listings_path %>
 
