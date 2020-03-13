@@ -118,13 +118,20 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 <br>
+
+  <div class="field">
+  <%= f.label :picture %><%= f.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+  </div>
+
+<br>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up" %> 
   </div>
 <% end %>
 <br>
-        <%= render "devise/shared/links" %>
+        <%= render "devise/shared/links"%>
     </div>
+    
 </div>
 </div>
     <!-- End: Registration Form with Photo -->

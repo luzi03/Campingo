@@ -138,6 +138,11 @@
 </p>
 
 <p>
+<strong>Picture:</strong>
+<%= @user.picture %></p>
+</p>
+
+<p>
 <strong>Listings:</strong>
 <% @user_listings.each do |listing| %>
   <%=link_to listing.title, listing_path(listing) %>

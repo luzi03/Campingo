@@ -108,6 +108,10 @@
 <%= f.text_area :bio, autofocus: true, autocomplete: "bio" %>
 </div>
 
+<div class="field">
+  <%= f.label :picture %><%= f.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
