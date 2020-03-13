@@ -7,10 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-#for i in 1..10
+for i in 1..10
     
-#    Category.create(
-#        name: Faker::Appliance.equipment     
-#    )
-#    puts "Created #{i} records"
-#end
+    user = User.new
+    user.email = "#{i}@1.com"
+    user.username = "aaa#{i}"
+    user.password = '123456'
+    user.password_confirmation = '123456'
+    user.save!
+end
