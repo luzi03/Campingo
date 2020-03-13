@@ -26,13 +26,12 @@
                             <li class="nav-item" role="presentation"><a class="nav-link" href="#"></a></li>
                             <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Explore&nbsp;</a>
                                 <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation"  <%= link_to "Listings", listings_path %><a class="dropdown-item" role="presentation" 
-                                <%= link_to 'Users', users_path %><a class="dropdown-item" role="presentation"   <%= link_to "Chat", conversations_path %> <a class="dropdown-item" role="presentation"
-                                href="#">Blog</a></div>
+                                <%= link_to 'Users', users_path %><a class="dropdown-item" role="presentation"   <%= link_to "Chat", conversations_path %> 
                             </li>
                         </ul>
                         <form class="form-inline mr-auto" target="_self">
                             <div class="form-group"><label for="search-field"></label><input class="form-control search-field" type="search" id="search-field" name="search"></div>
-                        </form><span class="navbar-text"><a class="login" <%= link_to "Login", new_user_session_path %></span><a class="btn btn-light action-button" role="button" <%= link_to "Sign up", new_user_registration_path %></div>
+                        </form><span class="navbar-text"><a class="btn btn-light action-button" role="button" <%= link_to "Logout", destroy_user_session_path %></div>
                         </div>
             </nav>
             <div class="container hero">
@@ -101,12 +100,13 @@
                 <div class="col-md-12">
                     <div class="text-center">
                     <p>
-            <h4><strong>Subject:</strong><%= @conversation.subject %></h4><br> 
+            <h4><strong>Subject:</strong>  
+            <%= @conversation.subject %></h4><br> 
               
               <% @conversation.receipts_for(current_user).each do |receipt| %>
                   <% message = receipt.message %>  <br>
                   
-                  <%= message.sender.name %>  
+                 <strong> <%= message.sender.name %>  </strong>
                     says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %> <br>
                   
                   <%= message.body %>
@@ -122,7 +122,7 @@
                 <%=submit_tag %>
                 <% end %>
                 <br>
-                <%= link_to " My Conversations", conversations_path %>
+                <%= link_to " My Chats", conversations_path %>
             </p>
                 </div>
             </div>
@@ -147,7 +147,7 @@
             </ul>
             <!-- End: Links -->
             <!-- Start: Copyright -->
-            <p class="copyright">Company Name © 2017</p>
+            <p class="copyright">Campingo © 2020</p>
             <!-- End: Copyright -->
         </footer>
     </div>
